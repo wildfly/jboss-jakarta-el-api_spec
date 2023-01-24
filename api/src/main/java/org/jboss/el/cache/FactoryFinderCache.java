@@ -96,7 +96,11 @@ public class FactoryFinderCache {
                 BufferedReader rd =
                         new BufferedReader(new InputStreamReader(is, "UTF-8"));
 
-                String factoryClassName = rd.readLine();
+                String factoryClassName;
+                do {
+                    factoryClassName = sanitize(rd.readLine());
+                } while (factoryClassName != null && factoryClassName.isEmpty());
+
                 rd.close();
 
                 if (factoryClassName != null &&
@@ -113,6 +117,28 @@ public class FactoryFinderCache {
             classCache.put(new CacheKey(classLoader, factoryId), "");
         }
         return null;
+    }
+
+    static String sanitize(String line) {
+        if (line == null) {
+            return null;
+        }
+
+        // strip comment
+        int idx = line.indexOf('#');
+        if (idx >= 0) {
+            line = line.substring(0, idx);
+        }
+
+        // strip spaces and tabs
+        while (line.startsWith(" ") || line.startsWith("\t")) {
+            line = line.substring(1);
+        }
+        while (line.endsWith(" ") || line.endsWith("\t")) {
+            line = line.substring(0, line.length() - 1);
+        }
+
+        return line;
     }
 
     private static class CacheKey {
