@@ -1,6 +1,10 @@
-# Jakarta Expression Language
+# WildFly Jakarta Expression Language API
 
-This is a fork of the Jakarta Expression Language repository.
+This is a WildFly-specific fork of the Eclipse EE4J Jakarta Expression Language [spec and API repository](https://github.com/jakartaee/expression-language).
+
+The purpose of this project is to maintain a variant of the Jakarta Expression Language API binary that is tailored for use in a WildFly application server environment.
+
+This fork is limited to the API portion of the Eclipse EE4J repository. Specification and TCK content in the Eclipse EE4J repository has been removed.
 
 [Online JavaDoc](https://javadoc.io/doc/jakarta.el/jakarta.el-api/)
 
