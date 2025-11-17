@@ -320,7 +320,7 @@ public class BeanELResolver extends ELResolver {
             throw new PropertyNotWritableException(getExceptionMessageString(context, "resolverNotwritable", new Object[] { base.getClass().getName() }));
         }
 
-        Method method = getBeanProperty(context, base, property).getWriteMethod();
+        Method method = getBeanProperty(context, base, property).getWriteMethod(base);
         if (method == null) {
             throw new PropertyNotWritableException(
                     getExceptionMessageString(context, "propertyNotWritable", new Object[] { base.getClass().getName(), property.toString() }));
