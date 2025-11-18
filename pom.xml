@@ -30,7 +30,7 @@
     <groupId>org.jboss.spec.jakarta.el</groupId>
     <artifactId>el-parent</artifactId>
     <packaging>pom</packaging>
-    <version>6.0.2.Final</version>
+    <version>6.0.3.Final-SNAPSHOT</version>
 
     <name>WildFly Jakarta Expression Language API -- Parent</name>
     <description>Jakarta Expression Language API for use in a WildFly server</description>
